@@ -1,0 +1,21 @@
+{
+  "family": "Smart*",
+  "tool": "SmartSeal",
+  "version": "3.0.0",
+  "iaiso_section": "\u00a73 \u00b7 Provenance",
+  "share_mode": "public",
+  "cross_promote": [
+    "SmartPangolin",
+    "SmartPrompt",
+    "SmartCheck",
+    "SmartStandard",
+    "SmartSim",
+    "SmartMoat",
+    "SmartRoute",
+    "SmartFeed"
+  ],
+  "links": {
+    "iaiso": "https://iaiso.org",
+    "cloud": "https://smarttasks.cloud"
+  }
+}

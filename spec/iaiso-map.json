@@ -1,0 +1,21 @@
+{
+  "tool": "SmartSeal",
+  "package": "smartseal",
+  "version": "3.0.0",
+  "iaiso_section": "\u00a73 \u00b7 Provenance",
+  "rule_prefix": "SEAL-*",
+  "conforms_to": "https://github.com/SmartTasksOrg/IAIso",
+  "cloud": "https://smarttasks.cloud",
+  "stacks_with": [
+    "SmartCheck",
+    "SmartRoute"
+  ],
+  "starter_kits": {
+    "Python": "https://github.com/SmartTasksOrg/IAIso/tree/main/starter-kits/python",
+    "Node / TypeScript": "https://github.com/SmartTasksOrg/IAIso/tree/main/starter-kits/node",
+    "Go": "https://github.com/SmartTasksOrg/IAIso/tree/main/starter-kits/go",
+    "Java": "https://github.com/SmartTasksOrg/IAIso/tree/main/starter-kits/java",
+    "PHP": "https://github.com/SmartTasksOrg/IAIso/tree/main/starter-kits/php",
+    "Rust": "https://github.com/SmartTasksOrg/IAIso/tree/main/starter-kits/rust"
+  }
+}

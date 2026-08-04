@@ -1,0 +1,5 @@
+- id: smartseal
+  name: SmartSeal
+  entry: smartseal --demo
+  language: python
+  pass_filenames: false

@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "smartseal"
+version = "3.0.0"
+description = "Seal what you ship. A signed receipt so anyone can verify what they received."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "Apache-2.0" }
+authors = [{ name = "SmartTasks Lab" }]
+keywords = ["smart", "ai", "iaiso", "smartseal", "devtools"]
+dependencies = []
+
+[project.urls]
+Homepage = "https://smarttasks.cloud"
+Standard = "https://iaiso.org"
+Repository = "https://github.com/SmartTasksOrg/smartseal"
+
+[project.scripts]
+smartseal = "smartseal.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
