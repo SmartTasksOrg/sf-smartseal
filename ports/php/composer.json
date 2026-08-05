@@ -1,0 +1,2 @@
+{ "name": "smarttasks/smartseal", "description": "SmartSeal - native PHP port. Content-addressed seal + verify. No deps.",
+  "license": "Apache-2.0", "type": "library", "bin": ["smartseal.php"] }

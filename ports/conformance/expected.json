@@ -1,0 +1,46 @@
+{
+  "results": [
+    {
+      "name": "seal-hello",
+      "sha256": "b94d27b9934d3e08a52e52d7da7dabfac484efe37a5380ee9088f7ace2efcde9",
+      "signature": "ced19c934dab08da9aea028532d6f5e4",
+      "chain": [
+        "SmartSeal-demo"
+      ]
+    },
+    {
+      "name": "seal-empty",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "signature": "5de2bd038c290593e36bfde2b9ec1e6b",
+      "chain": [
+        "SmartSeal-demo"
+      ]
+    },
+    {
+      "name": "seal-custom-signer",
+      "sha256": "239f59ed55e737c77147cf55ad0c1b030b6d7ee748a7426952f9b852d5a935e5",
+      "signature": "89ae26c0b4c3114c23e71318a9f7b9f1",
+      "chain": [
+        "acme-ci"
+      ]
+    },
+    {
+      "name": "verify-ok",
+      "valid": true,
+      "tampered": false,
+      "chain_len": 1
+    },
+    {
+      "name": "verify-tampered",
+      "valid": false,
+      "tampered": true,
+      "chain_len": 1
+    },
+    {
+      "name": "verify-wrong-signer",
+      "valid": false,
+      "tampered": false,
+      "chain_len": 1
+    }
+  ]
+}

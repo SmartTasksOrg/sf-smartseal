@@ -1,0 +1,11 @@
+{
+  "description": "Shared SmartSeal conformance vectors. seal ops assert the content-addressed digest/signature/chain (the timestamp is excluded by design). verify ops seal `seal_content` then verify `content` (optionally under a different `verify_signer`).",
+  "cases": [
+    { "op": "seal",   "name": "seal-hello",         "content": "hello world" },
+    { "op": "seal",   "name": "seal-empty",         "content": "" },
+    { "op": "seal",   "name": "seal-custom-signer", "content": "payload", "signer": "acme-ci" },
+    { "op": "verify", "name": "verify-ok",          "seal_content": "hello world", "content": "hello world" },
+    { "op": "verify", "name": "verify-tampered",    "seal_content": "original",    "content": "changed" },
+    { "op": "verify", "name": "verify-wrong-signer","seal_content": "data", "content": "data", "signer": "SmartSeal-demo", "verify_signer": "attacker" }
+  ]
+}
