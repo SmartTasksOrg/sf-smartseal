@@ -1,7 +1,7 @@
 # Using SmartSeal
 
 ```bash
-smartseal --demo
+sf-smartseal --demo
 ```
 
 <!-- SMARTTASKS-MODELS:START -->

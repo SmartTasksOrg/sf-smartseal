@@ -1,2 +1,2 @@
 # SmartSeal demo
-Bundled sample data; `smartseal --demo` uses built-ins.
+Bundled sample data; `sf-smartseal --demo` uses built-ins.
