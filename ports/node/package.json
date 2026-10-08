@@ -1,4 +1,26 @@
-{ "name": "@smarttasks/smartseal", "version": "3.0.0",
+{
+  "name": "sf-smartseal",
+  "version": "3.0.0",
   "description": "SmartSeal — native Node port. Content-addressed seal + verify. Zero deps.",
-  "license": "Apache-2.0", "bin": { "sf-smartseal": "bin/cli.js" }, "main": "lib/seal.js",
-  "scripts": { "test": "node test/conformance.test.js" } }
+  "license": "Apache-2.0",
+  "bin": {
+    "sf-smartseal": "bin/cli.js"
+  },
+  "main": "lib/seal.js",
+  "scripts": {
+    "test": "node test/conformance.test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SmartTasksOrg/sf-smartseal.git",
+    "directory": "ports/node"
+  },
+  "files": [
+    "bin/",
+    "lib/"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  }
+}
