@@ -15,8 +15,12 @@ As AI reshapes how we work, a new gap opens: you consume mixed human/ai artifact
 `seal` at the exact moment the gap bites, and it works the second you clone it
 (a synthetic demo ships in `demo/`).
 
+SmartSeal is not published on PyPI yet. Until this README says otherwise, a package called `smartseal` on any registry is not ours.
+
 ```bash
-pip install smartseal
+git clone https://github.com/SmartTasksOrg/smartseal
+cd smartseal
+python -m pip install .
 smartseal --demo        # run against the bundled demo
 ```
 
@@ -24,8 +28,9 @@ smartseal --demo        # run against the bundled demo
 
 | Where you work | How you run it |
 |---|---|
-| **Python** | `pip install smartseal` |
+| **Python** | from a clone: `python -m pip install .` (not on PyPI yet) |
 | **Go · Java · Node · PHP** | native ports in [`ports/`](ports/), each verified against the Python reference by [`ports/conformance/run.sh`](ports/conformance/run.sh) |
+| **Flowise · OpenAI/Anthropic tools · GitHub Actions · LangChain · LlamaIndex · MCP · pre-commit · VS Code** | ready-made wrappers in [`integrations/`](integrations/), all calling one `adapter.py` |
 | **CI / pre-commit** | add the hook from [`.pre-commit-hooks.yaml`](.pre-commit-hooks.yaml) |
 
 ## What's in this repo
@@ -33,6 +38,7 @@ smartseal --demo        # run against the bundled demo
 - **Core engine** — [`src/smartseal/`](src/smartseal/): seal() -> Receipt; verify() -> VerifyResult. Deterministic, dependency-free.
 - **CLI** — `smartseal --demo` (and `--version`): a deterministic demo of the core.
 - **Language ports** — [`ports/`](ports/): native Go, Java, Node, PHP implementations that reproduce the Python reference, with a shared conformance harness.
+- **Framework integrations** — [`integrations/`](integrations/): Flowise, OpenAI/Anthropic function-calling, GitHub Action, LangChain, LlamaIndex, MCP server, pre-commit, VS Code extension — each a thin wrapper over one `adapter.py` bound to the core.
 - **Also included** — a runnable [`demo/`](demo/), [`examples/`](examples/), the IAIso mapping [`spec/iaiso-map.json`](spec/iaiso-map.json), a browser [`site/playground.html`](site/playground.html), plus public smoke tests in `tests/`.
 
 ## How it works
