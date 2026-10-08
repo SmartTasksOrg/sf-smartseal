@@ -1,7 +1,7 @@
 'use strict';
 /*
  * SmartSeal — native Node port.
- * Reproduces smartseal.core.seal/verify: SHA-256 content digest, a 32-hex
+ * Reproduces sf_smartseal.core.seal/verify: SHA-256 content digest, a 32-hex
  * signature = sha256(digest + signer), and tamper/valid checks. The reference's
  * non-deterministic `created` timestamp is intentionally not part of the port
  * contract (only the content-addressed fields are). Uses Node's crypto only.

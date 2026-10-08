@@ -3,7 +3,7 @@ import java.security.MessageDigest;
 import java.util.*;
 
 /*
- * SmartSeal - native Java port. Reproduces smartseal.core.seal/verify
+ * SmartSeal - native Java port. Reproduces sf_smartseal.core.seal/verify
  * (SHA-256 digest, 32-hex signature = sha256(digest+signer), tamper/valid). JDK-only.
  *   javac SmartSeal.java && java SmartSeal [vectors.json]
  */

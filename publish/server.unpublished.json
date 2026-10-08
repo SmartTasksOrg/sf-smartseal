@@ -1,16 +1,16 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
-  "name": "io.github.smarttasksorg/smartseal",
+  "name": "io.github.smarttasksorg/sf-smartseal",
   "description": "Seal what you ship. A signed receipt so anyone can verify what they received.",
   "version": "3.0.0",
   "repository": {
-    "url": "https://github.com/SmartTasksOrg/smartseal",
+    "url": "https://github.com/SmartTasksOrg/sf-smartseal",
     "source": "github"
   },
   "packages": [
     {
       "registryType": "pypi",
-      "identifier": "smartseal",
+      "identifier": "sf-smartseal",
       "version": "3.0.0",
       "transport": {
         "type": "stdio"

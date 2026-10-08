@@ -1,4 +1,4 @@
-"""SmartSeal CLI — run `smartseal --demo`."""
+"""SmartSeal CLI — run `sf-smartseal --demo`."""
 import os, sys, json
 from . import core
 from ._version import __version__

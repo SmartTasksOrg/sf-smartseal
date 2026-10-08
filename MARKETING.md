@@ -21,7 +21,7 @@ draft below.
 **Dev.to / Hashnode:** a data-story — "what I found running SmartSeal across N real
 repos/prompts/answers" — tool as the byproduct. Durable SEO tail.
 
-**MCP registry + awesome-lists:** list `smartseal-mcp`; PR into awesome-mcp and the
+**MCP registry + awesome-lists:** list `sf-smartseal-mcp`; PR into awesome-mcp and the
 relevant awesome-devsecops / awesome-ai list.
 
 **X / Bluesky / Mastodon:** the screenshot + the one-liner people can run immediately.

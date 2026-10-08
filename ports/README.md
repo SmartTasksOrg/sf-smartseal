@@ -1,7 +1,7 @@
 # SmartSeal \u2014 language ports
 
 Native Go / Node / Java / PHP re-implementations of `seal()` / `verify()`.
-Each reproduces the Python reference (`src/smartseal/core.py`): the SHA-256 content
+Each reproduces the Python reference (`src/sf_smartseal/core.py`): the SHA-256 content
 digest, the 32-hex signature `sha256(digest+signer)`, and the tamper/valid checks.
 
 The reference also stamps a `created` timestamp; that field is **non-deterministic**
