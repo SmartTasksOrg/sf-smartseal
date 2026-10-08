@@ -1,0 +1,47 @@
+{
+  "schema": 1,
+  "repo": "SmartTasksOrg/smartseal",
+  "checked_on": "2026-10-08",
+  "names": [
+    {
+      "registry": "pypi",
+      "name": "smartseal",
+      "registered": false,
+      "workflow": "release.yml",
+      "note": "first release pending; README in state A"
+    },
+    {
+      "registry": "mcp",
+      "name": "io.github.smarttasksorg/smartseal",
+      "registered": false
+    },
+    {
+      "registry": "npm",
+      "name": "@smarttasks/smartseal",
+      "registered": false
+    },
+    {
+      "registry": "packagist",
+      "name": "smarttasks/smartseal",
+      "registered": false
+    },
+    {
+      "registry": "go",
+      "name": "github.com/SmartTasksOrg/smartseal/ports/go",
+      "registered": false
+    }
+  ],
+  "third_party": {
+    "pypi": [
+      "pip",
+      "build",
+      "pytest"
+    ],
+    "npm": []
+  },
+  "local_images": [],
+  "git_owners": [
+    "SmartTasksOrg"
+  ],
+  "exclude_paths": []
+}
