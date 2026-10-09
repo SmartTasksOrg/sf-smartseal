@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-"""Regenerate expected.json from the Python reference (smartseal.core).
+"""Regenerate expected.json from the Python reference (sf_smartseal.core).
 seal/verify take file paths, so content is written to temp files; the
 non-deterministic `created` timestamp is dropped from the contract."""
 import json, os, sys, tempfile
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.abspath(os.path.join(HERE, "..", "..", "src")))
-from smartseal.core import seal, verify  # noqa: E402
+from sf_smartseal.core import seal, verify  # noqa: E402
 
 def _tmp(content):
     fd, p = tempfile.mkstemp()

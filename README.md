@@ -1,4 +1,4 @@
-<!-- mcp-name: io.github.smarttasksorg/smartseal · part of the Smart* family -->
+<!-- mcp-name: io.github.smarttasksorg/sf-smartseal -->
 <h1 align="center">🦔 SmartSeal</h1>
 <p align="center"><b>Seal what you ship. A signed receipt so anyone can verify what they received.</b></p>
 <p align="center">
@@ -15,14 +15,32 @@ As AI reshapes how we work, a new gap opens: you consume mixed human/ai artifact
 `seal` at the exact moment the gap bites, and it works the second you clone it
 (a synthetic demo ships in `demo/`).
 
-SmartSeal is not published on PyPI yet. Until this README says otherwise, a package called `smartseal` on any registry is not ours.
+## Install
+
+SmartSeal is not published on PyPI or any other package registry yet. Until
+this section says otherwise, a package called `sf-smartseal` on any registry
+is not ours, and neither is `smartseal`.
+
+Install from a clone (Python 3.10 or later):
 
 ```bash
-git clone https://github.com/SmartTasksOrg/smartseal
-cd smartseal
+git clone https://github.com/SmartTasksOrg/sf-smartseal
+cd sf-smartseal
+python -m venv .venv
+. .venv/bin/activate          # Windows PowerShell: .\.venv\Scripts\Activate.ps1
 python -m pip install .
-smartseal --demo        # run against the bundled demo
+sf-smartseal --demo
 ```
+
+## Status
+
+- **Version 3.0.0, experimental.** A small deterministic command-line tool with a bundled synthetic demo and two smoke tests.
+- **Published:** nowhere yet; install from a clone (above).
+- **Tested:** the 2 smoke tests in `tests/` on Python 3.12, Linux, on every push to master and every pull request (`.github/workflows/ci.yml`).
+- **Not tested:** Windows and macOS; Python versions other than 3.12.
+- **Ports:** Go, Java, Node and PHP ports in `ports/` are checked against the Python reference by `ports/conformance/run.sh` (run by hand, not in CI); they are not published on any registry.
+- **Receipts:** the receipt's `signature` field is the first 32 hex characters of SHA-256(file digest + signer name). It uses no key: it shows that a file changed since the receipt was made, not who made the receipt, and it does not resist forgery.
+- **Security review:** none independent. Report vulnerabilities as described in [SECURITY.md](SECURITY.md).
 
 ## Run it in your stack
 
@@ -35,8 +53,8 @@ smartseal --demo        # run against the bundled demo
 
 ## What's in this repo
 
-- **Core engine** — [`src/smartseal/`](src/smartseal/): seal() -> Receipt; verify() -> VerifyResult. Deterministic, dependency-free.
-- **CLI** — `smartseal --demo` (and `--version`): a deterministic demo of the core.
+- **Core engine** — [`src/sf_smartseal/`](src/sf_smartseal/): seal() -> Receipt; verify() -> VerifyResult. Deterministic, dependency-free.
+- **CLI** — `sf-smartseal --demo` (and `--version`): a deterministic demo of the core.
 - **Language ports** — [`ports/`](ports/): native Go, Java, Node, PHP implementations that reproduce the Python reference, with a shared conformance harness.
 - **Framework integrations** — [`integrations/`](integrations/): Flowise, OpenAI/Anthropic function-calling, GitHub Action, LangChain, LlamaIndex, MCP server, pre-commit, VS Code extension — each a thin wrapper over one `adapter.py` bound to the core.
 - **Also included** — a runnable [`demo/`](demo/), [`examples/`](examples/), the IAIso mapping [`spec/iaiso-map.json`](spec/iaiso-map.json), a browser [`site/playground.html`](site/playground.html), plus public smoke tests in `tests/`.
@@ -48,7 +66,7 @@ Rule IDs are namespaced `SEAL-*` so output looks kin to the rest of the family
 
 ### The data objects (UML)
 
-These are real dataclasses in [`src/smartseal/models.py`](src/smartseal/models.py) — the
+These are real dataclasses in [`src/sf_smartseal/models.py`](src/sf_smartseal/models.py) — the
 diagram and the code are the same thing:
 
 ```mermaid
@@ -146,14 +164,14 @@ all aligned to the [IAIso standard](https://github.com/SmartTasksOrg/IAIso). Eac
 
 | Tool | IAIso | What it does |
 |---|---|---|
-| [SmartPangolin](https://github.com/SmartTasksOrg/smartpangolin) | §1 · Secure Sharing | Scan before you share. Stop leaking secrets into AI models, agents, and tools. |
-| [SmartPrompt](https://github.com/SmartTasksOrg/smartprompt) | §4 · Context | Lint before you send. Bad prompt in, bad work out — and it's your name on it. |
-| [SmartCheck](https://github.com/SmartTasksOrg/smartcheck) | §2 · Verification | Check before you sign off. Catch the AI when it's confidently wrong. |
-| [SmartStandard](https://github.com/SmartTasksOrg/smartstandard) | §7 · Standards | Standardize before you scale. One shared, auditable convention for AI-assisted work. |
-| [SmartSim](https://github.com/SmartTasksOrg/smartsim) | §8 · Foresight | Simulate before it hits you. See your role's task-by-task collapse sequence. |
-| [SmartMoat](https://github.com/SmartTasksOrg/smartmoat) | §6 · Workforce | Know your moat. Score the tasks AI can't easily take — and widen them. |
-| [SmartRoute](https://github.com/SmartTasksOrg/smartroute) | §5 · Orchestration | Route only what you trust. Gate agents and tools with trust scores and guardrails. |
-| [SmartFeed](https://github.com/SmartTasksOrg/smartfeed) | §9 · Awareness | Distill the firehose. A tight brief of only what moves your work. |
+| [SmartPangolin](https://github.com/SmartTasksOrg/sf-smartpangolin) | §1 · Secure Sharing | Scan before you share. Stop leaking secrets into AI models, agents, and tools. |
+| [SmartPrompt](https://github.com/SmartTasksOrg/sf-smartprompt) | §4 · Context | Lint before you send. Bad prompt in, bad work out — and it's your name on it. |
+| [SmartCheck](https://github.com/SmartTasksOrg/sf-smartcheck) | §2 · Verification | Check before you sign off. Catch the AI when it's confidently wrong. |
+| [SmartStandard](https://github.com/SmartTasksOrg/sf-smartstandard) | §7 · Standards | Standardize before you scale. One shared, auditable convention for AI-assisted work. |
+| [SmartSim](https://github.com/SmartTasksOrg/sf-smartsim) | §8 · Foresight | Simulate before it hits you. See your role's task-by-task collapse sequence. |
+| [SmartMoat](https://github.com/SmartTasksOrg/sf-smartmoat) | §6 · Workforce | Know your moat. Score the tasks AI can't easily take — and widen them. |
+| [SmartRoute](https://github.com/SmartTasksOrg/sf-smartroute) | §5 · Orchestration | Route only what you trust. Gate agents and tools with trust scores and guardrails. |
+| [SmartFeed](https://github.com/SmartTasksOrg/sf-smartfeed) | §9 · Awareness | Distill the firehose. A tight brief of only what moves your work. |
 
 **Backed by the standard:** SmartSeal implements **IAIso §3 · Provenance**.
 **Open-source edition:** this repo is the simplified, single-purpose version, built for any org to integrate into its own architecture. SmartTasks' desktop app and [SmartTasks.cloud](https://smarttasks.cloud) run a more advanced, deeply-integrated implementation of the same IAIso governance — a separate product, not this code bundled.
