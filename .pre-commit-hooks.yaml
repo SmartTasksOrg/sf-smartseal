@@ -1,5 +1,5 @@
-- id: smartseal
+- id: sf-smartseal
   name: SmartSeal
-  entry: smartseal --demo
+  entry: sf-smartseal --demo
   language: python
   pass_filenames: false

@@ -1,5 +1,5 @@
 <?php
-/* SmartSeal - native PHP port. Reproduces smartseal.core.seal/verify. No deps. */
+/* SmartSeal - native PHP port. Reproduces sf_smartseal.core.seal/verify. No deps. */
 function seal_it(string $content, string $signer): array {
     $digest = hash('sha256', $content);
     $sig = substr(hash('sha256', $digest . $signer), 0, 32);

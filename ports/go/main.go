@@ -1,4 +1,4 @@
-// SmartSeal - native Go port. Reproduces smartseal.core.seal/verify.
+// SmartSeal - native Go port. Reproduces sf_smartseal.core.seal/verify.
 // Standard library only (crypto/sha256, encoding/json).
 package main
 

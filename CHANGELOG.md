@@ -1,5 +1,25 @@
 # Changelog
 
+## Unreleased
+
+### Security
+- Install instructions no longer name packages the maintainers have not
+  published. Until the first release, install from a clone (README, "Install").
+- New `SECURITY.md` (private vulnerability reporting), `names.json` (the only
+  official package names) and a CI check that fails when a document names any
+  other package.
+- Releases are built and published only by `.github/workflows/release.yml`
+  through PyPI trusted publishing, with provenance attestations.
+
+### Changed
+- **Renamed (breaking), `sf-` = Smart Family:** repository `SmartTasksOrg/sf-smartseal`, PyPI package `sf-smartseal`, command `sf-smartseal`, import package `sf_smartseal`, MCP server `io.github.smarttasksorg/sf-smartseal`. The unprefixed names are not used any more, so nobody can be sent to a look-alike.
+- README: "Install" and "Status" sections; the MCP marker on line 1 is the bare server name.
+- `pyproject.toml`: SPDX licence, `NOTICE` in the wheel, "3 - Alpha" classifier, Source/Issues/Security/Changelog URLs.
+- `make test` runs pytest (it ran a file that executed no test).
+- `MARKETING.md` moved out of the public repository.
+- `ports/node/package.json`: repository, files and publishConfig (still unpublished).
+- README and SECURITY.md state that the receipt signature uses no key and does not resist forgery.
+
 ## 3.0.0 — the family release
 - **Joined the Smart\* family**: shared mascot, manifesto, and `SEAL-*` rule-ID style.
 - **IAIso conformance**: implements **§3 · Provenance**; see `spec/iaiso-map.json`.

@@ -1,33 +1,39 @@
 {
   "schema": 1,
-  "repo": "SmartTasksOrg/smartseal",
+  "repo": "SmartTasksOrg/sf-smartseal",
   "checked_on": "2026-10-08",
   "names": [
     {
       "registry": "pypi",
-      "name": "smartseal",
+      "name": "sf-smartseal",
       "registered": false,
       "workflow": "release.yml",
       "note": "first release pending; README in state A"
     },
     {
+      "registry": "pypi",
+      "name": "smartseal",
+      "registered": false,
+      "note": "not used by the family: packages are published as sf-<name>; never install this name"
+    },
+    {
       "registry": "mcp",
-      "name": "io.github.smarttasksorg/smartseal",
+      "name": "io.github.smarttasksorg/sf-smartseal",
       "registered": false
     },
     {
       "registry": "npm",
-      "name": "@smarttasks/smartseal",
+      "name": "sf-smartseal",
       "registered": false
     },
     {
       "registry": "packagist",
-      "name": "smarttasks/smartseal",
+      "name": "smarttasksorg/sf-smartseal",
       "registered": false
     },
     {
       "registry": "go",
-      "name": "github.com/SmartTasksOrg/smartseal/ports/go",
+      "name": "github.com/SmartTasksOrg/sf-smartseal/ports/go",
       "registered": false
     }
   ],
