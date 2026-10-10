@@ -2,6 +2,17 @@
 
 ## Unreleased
 
+### Documentation
+- README "Install": `pip install sf-smartseal` now that the first release is on PyPI, with how to check its provenance;
+  "Status" says where it is published. `names.json` marks `sf-smartseal` as registered.
+- `publish/server.json` (the MCP registry manifest) is back under its normal name; it is not submitted to the registry yet.
+- `site/playground.html`: each tool's install line now names its `sf-` package on PyPI; the README family table also lists SmartDelegate, SmartFabric, SmartLLMCost and SmartPolicyTranslator.
+- Release check: the wheel installed in a clean environment now runs the README's demo command from an empty folder, not only `--version`.
+
+## 3.0.0 — first PyPI release as `sf-smartseal` (2026-10-09)
+
+Published to PyPI on 2026-10-09 from tag `v3.0.0` by `.github/workflows/release.yml`, with provenance attestations. The version number is the same as the 3.0.0 entry below; these are the changes made before that first upload.
+
 ### Security
 - Install instructions no longer name packages the maintainers have not
   published. Until the first release, install from a clone (README, "Install").
