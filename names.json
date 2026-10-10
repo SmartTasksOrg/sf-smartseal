@@ -1,14 +1,14 @@
 {
   "schema": 1,
   "repo": "SmartTasksOrg/sf-smartseal",
-  "checked_on": "2026-10-08",
+  "checked_on": "2026-10-09",
   "names": [
     {
       "registry": "pypi",
       "name": "sf-smartseal",
-      "registered": false,
+      "registered": true,
       "workflow": "release.yml",
-      "note": "first release pending; README in state A"
+      "note": "first release 3.0.0 published 2026-10-09 by release.yml (PyPI trusted publishing) with provenance attestations"
     },
     {
       "registry": "pypi",
@@ -35,6 +35,54 @@
       "registry": "go",
       "name": "github.com/SmartTasksOrg/sf-smartseal/ports/go",
       "registered": false
+    },
+    {
+      "registry": "pypi",
+      "name": "sf-smartpangolin",
+      "registered": true,
+      "note": "family package, published by SmartTasksOrg/sf-smartpangolin (named in site/playground.html)"
+    },
+    {
+      "registry": "pypi",
+      "name": "sf-smartprompt",
+      "registered": true,
+      "note": "family package, published by SmartTasksOrg/sf-smartprompt (named in site/playground.html)"
+    },
+    {
+      "registry": "pypi",
+      "name": "sf-smartcheck",
+      "registered": true,
+      "note": "family package, published by SmartTasksOrg/sf-smartcheck (named in site/playground.html)"
+    },
+    {
+      "registry": "pypi",
+      "name": "sf-smartstandard",
+      "registered": true,
+      "note": "family package, published by SmartTasksOrg/sf-smartstandard (named in site/playground.html)"
+    },
+    {
+      "registry": "pypi",
+      "name": "sf-smartsim",
+      "registered": true,
+      "note": "family package, published by SmartTasksOrg/sf-smartsim (named in site/playground.html)"
+    },
+    {
+      "registry": "pypi",
+      "name": "sf-smartmoat",
+      "registered": true,
+      "note": "family package, published by SmartTasksOrg/sf-smartmoat (named in site/playground.html)"
+    },
+    {
+      "registry": "pypi",
+      "name": "sf-smartroute",
+      "registered": true,
+      "note": "family package, published by SmartTasksOrg/sf-smartroute (named in site/playground.html)"
+    },
+    {
+      "registry": "pypi",
+      "name": "sf-smartfeed",
+      "registered": true,
+      "note": "family package, published by SmartTasksOrg/sf-smartfeed (named in site/playground.html)"
     }
   ],
   "third_party": {
