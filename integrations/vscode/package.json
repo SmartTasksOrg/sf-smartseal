@@ -1,0 +1,37 @@
+{
+  "name": "smartseal-vscode",
+  "displayName": "SmartSeal (IAIso)",
+  "version": "3.0.0",
+  "description": "Produce a content-addressed SHA-256 receipt (manifest + signature) for a file.",
+  "publisher": "smarttasks",
+  "license": "Apache-2.0",
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "categories": [
+    "Linters",
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:smartseal.run"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "smartseal.run",
+        "title": "SmartSeal: Run on current file/workspace"
+      }
+    ],
+    "configuration": {
+      "title": "SmartSeal",
+      "properties": {
+        "smartseal.python": {
+          "type": "string",
+          "default": "python3",
+          "description": "Python interpreter"
+        }
+      }
+    }
+  }
+}

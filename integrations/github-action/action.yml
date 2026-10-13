@@ -1,0 +1,36 @@
+name: "SmartSeal"
+description: "Produce a content-addressed SHA-256 receipt (manifest + signature) for a file."
+branding:
+  icon: shield
+  color: purple
+inputs:
+  path:
+    description: "File to check"
+    required: false
+    default: "."
+  package:
+    description: "Optional pip requirement or path to install instead. Leave empty (the default) to install the copy of SmartSeal this action was taken from, at the ref the workflow names, so nothing is fetched from a package index by name."
+    required: false
+    default: ""
+runs:
+  using: composite
+  steps:
+    - name: Install SmartSeal from this action's own repository
+      shell: bash
+      env:
+        PKG: ${{ inputs.package }}
+      run: |
+        # Never install by name: "smartseal" is not published on PyPI by the
+        # maintainers yet, so a package of that name is not ours.
+        if [ -z "$PKG" ]; then
+          PKG="$GITHUB_ACTION_PATH/../.."
+          if [ ! -f "$PKG/pyproject.toml" ]; then
+            echo "SmartSeal source not found next to the action ($PKG); set the 'package' input" >&2
+            exit 1
+          fi
+        fi
+        python -m pip install --quiet "$PKG"
+    - shell: bash
+      env:
+        INPUT_VALUE: ${{ inputs.path }}
+      run: python "$GITHUB_ACTION_PATH/../adapter.py" --file "$INPUT_VALUE"
