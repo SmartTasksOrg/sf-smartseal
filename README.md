@@ -46,9 +46,9 @@ sf-smartseal --demo
 
 ## Status
 
-- **Version 3.0.0, experimental.** A small deterministic command-line tool with a bundled synthetic demo and two smoke tests.
+- **Version 3.0.0, experimental (alpha).** A small deterministic command-line tool with a bundled synthetic demo. The version number does not mean the tool is mature: PyPI classifies it as "Development Status :: 3 - Alpha".
 - **Published:** PyPI `sf-smartseal` (see Install). Nothing else is published.
-- **Tested:** the 2 smoke tests in `tests/` on Python 3.12, Linux, on every push to master and every pull request (`.github/workflows/ci.yml`).
+- **Tested:** the 8 tests in `tests/` (2 smoke tests of the demo and 6 behaviour tests of `core`, in `tests/test_behaviour.py`) on Python 3.12, Linux, on every push to master and every pull request (`.github/workflows/ci.yml`).
 - **Not tested:** Windows and macOS; Python versions other than 3.12.
 - **Ports:** Go, Java, Node and PHP ports in `ports/` are checked against the Python reference by `ports/conformance/run.sh` (run by hand, not in CI); they are not published on any registry.
 - **Receipts:** the receipt's `signature` field is the first 32 hex characters of SHA-256(file digest + signer name). It uses no key: it shows that a file changed since the receipt was made, not who made the receipt, and it does not resist forgery.
