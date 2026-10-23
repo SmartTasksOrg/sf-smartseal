@@ -2,7 +2,11 @@
 
 ## Unreleased
 
+### Tests
+- `tests/test_behaviour.py`: 6 behaviour tests of `core` (every rule or formula, edge cases and the fallbacks), next to the 2 smoke tests of the demo.
+
 ### Documentation
+- README "Status": says the tool is an alpha whatever its version number, how many tests it has, and what `core` does and does not do today.
 - README "Install": `pip install sf-smartseal` now that the first release is on PyPI, with how to check its provenance;
   "Status" says where it is published. `names.json` marks `sf-smartseal` as registered.
 - `publish/server.json` (the MCP registry manifest) is back under its normal name; it is not submitted to the registry yet.
