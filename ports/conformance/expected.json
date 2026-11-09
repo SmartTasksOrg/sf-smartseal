@@ -3,44 +3,50 @@
     {
       "name": "seal-hello",
       "sha256": "b94d27b9934d3e08a52e52d7da7dabfac484efe37a5380ee9088f7ace2efcde9",
-      "signature": "ced19c934dab08da9aea028532d6f5e4",
+      "public_key": "1d83c965ccd10ae22151912b8dba89e22278e6b4840703dbd093e11e667f701d",
       "chain": [
         "SmartSeal-demo"
-      ]
+      ],
+      "signature_len": 128
     },
     {
       "name": "seal-empty",
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "signature": "5de2bd038c290593e36bfde2b9ec1e6b",
+      "public_key": "1d83c965ccd10ae22151912b8dba89e22278e6b4840703dbd093e11e667f701d",
       "chain": [
         "SmartSeal-demo"
-      ]
+      ],
+      "signature_len": 128
     },
     {
       "name": "seal-custom-signer",
       "sha256": "239f59ed55e737c77147cf55ad0c1b030b6d7ee748a7426952f9b852d5a935e5",
-      "signature": "89ae26c0b4c3114c23e71318a9f7b9f1",
+      "public_key": "d4721fd9c28bc0a5397b1758d3260ef8f3bf010b25bace9d1eaf9465c0875988",
       "chain": [
         "acme-ci"
-      ]
+      ],
+      "signature_len": 128
     },
     {
       "name": "verify-ok",
       "valid": true,
       "tampered": false,
-      "chain_len": 1
+      "chain_len": 1,
+      "signature_ok": true
     },
     {
       "name": "verify-tampered",
       "valid": false,
       "tampered": true,
-      "chain_len": 1
+      "chain_len": 1,
+      "signature_ok": true
     },
     {
       "name": "verify-wrong-signer",
       "valid": false,
       "tampered": false,
-      "chain_len": 1
+      "chain_len": 1,
+      "signature_ok": false
     }
   ]
 }

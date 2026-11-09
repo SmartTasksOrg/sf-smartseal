@@ -2,6 +2,19 @@
 
 ## Unreleased
 
+### Security (breaking)
+- Receipts are now signed with Ed25519. Version 3.0 receipts used SHA-256(file digest + signer name) with no key, so anyone could forge one; they are refused by `receipt_from_json()` and must be resealed.
+- `seal(path, private_key, signer)` needs a private key; `verify(path, receipt, public_key)` needs the public key you trust and rejects receipts made with any other key.
+- The signature covers every receipt field (file name, digest, time, signer, key).
+
+### Added
+- `generate_keypair()`, `receipt_to_json()` / `receipt_from_json()`; `VerifyResult.signature_ok`; `Receipt.public_key`.
+- CLI: `sf-smartseal keygen --out NAME`, `seal FILE --key NAME.key`, `verify FILE RECEIPT --pub NAME.pub` (exit 1 when invalid). Private keys are written with mode 600.
+- Dependency: `cryptography>=42`.
+
+### Tests
+- `tests/test_behaviour.py` now has 15 behaviour tests covering real input, validation and the CLI.
+
 ### Tests
 - `tests/test_behaviour.py`: 6 behaviour tests of `core` (every rule or formula, edge cases and the fallbacks), next to the 2 smoke tests of the demo.
 

@@ -11,11 +11,13 @@ class Manifest:
 @dataclass
 class Receipt:
     manifest: Manifest
-    signature: str
-    chain: list[str]
+    signature: str          # Ed25519 signature, hex (128 characters)
+    chain: list[str]        # signer name(s)
+    public_key: str = ""    # signer's Ed25519 public key, hex (informational: verify against a key you trust)
 
 @dataclass
 class VerifyResult:
     valid: bool
     tampered: bool
     chain_len: int
+    signature_ok: bool = False
