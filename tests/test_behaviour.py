@@ -1,6 +1,7 @@
 """Behaviour of core.seal and core.verify: Ed25519-signed receipts."""
 import hashlib
 import json
+import os
 
 import pytest
 
@@ -127,7 +128,8 @@ def test_cli_keygen_seal_verify(tmp_path, capsys):
     p = make(tmp_path)
     prefix = str(tmp_path / "release")
     assert cli.main(["keygen", "--out", prefix]) == 0
-    assert (tmp_path / "release.key").stat().st_mode & 0o077 == 0     # private key not world-readable
+    if os.name == "posix":                                            # Windows has no POSIX mode bits; the
+        assert (tmp_path / "release.key").stat().st_mode & 0o077 == 0  # key gets the folder's permissions there
     assert cli.main(["seal", p, "--key", prefix + ".key", "--signer", "ci"]) == 0
     receipt = p + ".receipt.json"
     assert cli.main(["verify", p, receipt, "--pub", prefix + ".pub"]) == 0

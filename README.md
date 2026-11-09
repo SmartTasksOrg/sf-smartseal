@@ -50,6 +50,7 @@ sf-smartseal --demo
 - **Published:** PyPI `sf-smartseal` (see Install). Nothing else is published.
 - **Tested:** the 17 tests in `tests/` (2 smoke tests of the demo and 15 behaviour tests of `core`, in `tests/test_behaviour.py`) on Python 3.12, Linux, on every push to master and every pull request (`.github/workflows/ci.yml`).
 - **Not tested:** Windows and macOS; Python versions other than 3.12.
+- **Private keys on Windows:** `keygen` creates the private key readable only by you on Linux and macOS (mode 0600). Windows has no such mode: the file gets the permissions of its folder, so keep keys in a folder only you can read.
 - **Ports:** Go, Java, Node and PHP ports in `ports/` are checked against the Python reference by `ports/conformance/run.sh` (run by hand, not in CI); they are not published on any registry.
 - **Receipts:** signed with Ed25519 over every receipt field. Verifying needs the signer's public key, obtained from a place you trust; a receipt cannot be forged without the private key. Version 3.0 receipts were unsigned and must be resealed. Run it: `sf-smartseal keygen --out release`, `sf-smartseal seal FILE --key release.key`, `sf-smartseal verify FILE FILE.receipt.json --pub release.pub`.
 - **Security review:** none independent. Report vulnerabilities as described in [SECURITY.md](SECURITY.md).
